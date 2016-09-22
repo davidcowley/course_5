@@ -20,7 +20,6 @@ function LunchCheckController($scope) {
        if (number_of_items <= 3) {
           $scope.menu_msg = "Enjoy!";
           $scope.customStyle.colorClass = "green";
-          //turnGreen;
        } else {
           $scope.menu_msg = "Too Many!";
           $scope.customStyle.colorClass = "green";
@@ -30,13 +29,6 @@ function LunchCheckController($scope) {
 };
 
 $scope.customStyle = {};
-$scope.turnGreen = function (){
-   $scope.customStyle.colorClass = "green";
-}
-
-$scope.turnBlue = function() {
-   $scope.customStyle.colorClass = "blue";
-}
 
 }
 

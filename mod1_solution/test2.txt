@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LunchCheck">
+	<head>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="style.css">
+
+		<link rel="icon" href="https://avatars2.githubusercontent.com/u/5477500?v=3&amp;s=40">
+
+		<title>Module 1 solution</title>
+	</head>
+
+	<body>
+		<div class="container" ng-controller="LunchCheckController">
+			<p class="regular-text">Please provide a comma separated list of items. Note, that empty items between commas are not count (for example, 'Banana', , , , , 'Apple').</p>
+
+			<div class="line">
+				<input maxlength="64" ng-class="{empty: dataProvided === false}" type="text" ng-model="itemsInput" placeholder="Apple, Banana, Garlik, Cucumber" class="text-input">
+
+				<button ng-click="checkItems(itemsInput)" class="btn btn-primary">Check If Too Much</button>
+			</div>
+
+			<output ng-bind="message" class="output" ng-class="{success: dataProvided === true, error: dataProvided === false}"></output>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+		<script src="app.js"></script>
+	</body>
+</html>
+
+(function() {
+	'use strict';
+
+	var COMMA_SEPARATED_LIST = /\s*?\,\s*?/;
+
+	var lunchCheck = angular.module('LunchCheck', []);
+
+	lunchCheck.controller('LunchCheckController', ['$scope', function($scope) {
+		var lunchCheckController = this;
+
+		$scope.message = '';
+
+		$scope.itemsInput = '';
+
+		/**
+		 * Sets message, which should be shown to the user.
+		 * @param {String} message message string
+		 */
+
+		this.setFeedbackMessage = function(message) {
+			$scope.message = message;
+		};
+
+		/**
+		 * Checks comma separated list of items and calls message setter.
+		 * Method does not count empty items, provided, for example, as:
+		 * 'Banana', , , , 'Apple'
+		 * @param {String} itemsInput comma separated list of items
+		 */
+
+		$scope.checkItems = function(itemsInput) {
+			var items = itemsInput.split(COMMA_SEPARATED_LIST).filter(function(item) {
+				return !!item.trim();
+			});
+
+			var itemsLength = items.length;
+
+			var msg;
+
+			if( !itemsLength ) {
+				msg = 'Please enter data first';
+
+				$scope.dataProvided = false;
+			} else if( itemsLength <= 3 ) {
+				msg = 'Enjoy!';
+
+				$scope.dataProvided = true;
+			} else {
+				msg = 'Too much!';
+
+				$scope.dataProvided = true;
+			}
+
+			lunchCheckController.setFeedbackMessage(msg);
+		};
+	}]);
+})();
