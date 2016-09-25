@@ -1,0 +1,20 @@
+<br>
+<br>
+<br>
+<br>
+<table ng-if="$ctrl.found.length > 0">
+   <tr>
+      <th>Shorrt Name</th>
+      <th>Name</th>
+      <th>Description</th>
+   </tr>
+
+   <tr ng-repeat = "item in $ctrl.found">
+      <td>{{ item.short_name }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+      <td><button ng-click="$ctrl.remove($index);" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Don't want this one</button></td>
+
+   </tr>
+</table>
+<div class="error"><h2>Nothing Found!</h2></div>

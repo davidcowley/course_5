@@ -1,0 +1,12 @@
+<br>
+<br>
+<br>
+<br>
+<ul>
+  <li ng-repeat="item in $ctrl.found">
+    <!-- {{ item.short_name }},{{ item.name }},{{ item.description }} -->
+    {{ item.short_name }},{{ item.description }}
+    <button ng-click="$ctrl.remove($index);" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Don't want this one</button>
+  </li>
+</ul>
+<div class="error"><h2>Nothing Found!</h2></div>
