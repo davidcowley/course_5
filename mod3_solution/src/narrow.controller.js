@@ -32,7 +32,7 @@ function NarrowItDownController($rootScope, MenuSearchService, $element, $timeou
             var warningElem = $element.find('div.error');
             warningElem.slideUp(0);
           }
-          $timeout(function () {}, 10000);
+          //$timeout(function () {}, 10000);
           menuList.found = foundItems;
         })
         .catch(function (error) {
