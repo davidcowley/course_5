@@ -5,7 +5,7 @@
                               Single Page Web Applications with AngularJS
 
 
-                                      Module 3 Coding Assignment
+                                      Module 4 Coding Assignment
 							          Welcome to Our Restaurant
                                          October 9, 2016
 
