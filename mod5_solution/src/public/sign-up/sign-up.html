@@ -46,7 +46,7 @@
              ng-model="signUpCtrl.pref.menuitem"
              ng-blur="signUpCtrl.findItem();"
              required>
-          {{ signUpCtrl.pref.menuitem }}
+          {{ signUpCtrl.pref.menuitem }} {{ '  ' + signUpCtrl.pref.name }}
           <span ng-if="signupForm.menuitem.$error.required && signupForm.menuitem.$touched">
              No such menu number exits
           </span>

@@ -1,18 +1,26 @@
-<h1>Registration Information</h1>
-<div ng-if="myInfoCtrl.pref.completed">
-  <br><br>  
-  first Name    : {{ myInfoCtrl.pref.firstname}} <br>
-  Last Name     : {{ myInfoCtrl.pref.lastname}} <br>
-  Email Address : {{ myInfoCtrl.pref.email}} <br>
-  Phone Number  : {{ myInfoCtrl.pref.phone }} <br>
-  favorite Dish : {{ myInfoCtrl.pref.menuitem }} <br>
-  <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.ApiPath}}/images/{{myInfoCtrl.pref.menuitem}}.jpg">
-  Name : {{ myInfoCtrl.pref.name }} <br>
-  Description : {{ myInfoCtrl.pref.description }} <br>
-  <br><br><br><br><br>
-</div>
-<div ng-if="!myInfoCtrl.pref.completed">
-    <br><br><br>
-    Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-</div>
+<h1 id="my-info-head">Registration Information</h1>
+  <div class="container" ng-if="myInfoCtrl.pref.completed">
+    <div class="row">
+      <section class="col-sm-4">
+         <br><br>
+         first Name    : {{ myInfoCtrl.pref.firstname}} <br>
+         Last Name     : {{ myInfoCtrl.pref.lastname}} <br>
+         Email Address : {{ myInfoCtrl.pref.email}} <br>
+         Phone Number  : {{ myInfoCtrl.pref.phone }} <br>
+         <br><br><br><br><br>
+      </section>
+      <section  class="col-sm-4">
+         <br><br>
+         favorite Dish : {{ myInfoCtrl.pref.menuitem }} <br>
+         <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.ApiPath}}/images/{{myInfoCtrl.pref.menuitem}}.jpg">
+         Name : {{ myInfoCtrl.pref.name }} <br>
+         Description : {{ myInfoCtrl.pref.description }} <br>
+         <br><br><br><br><br>
+      </section>
+    </div>
+  </div>
+  <div ng-if="!myInfoCtrl.pref.completed" id="my-info-head">
+     <br><br><br>
+     Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a>
+     <br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>

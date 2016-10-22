@@ -154,6 +154,15 @@ input {
   margin-bottom: 20px;
   color:black
 }
+
+button:enabled {
+  color: #22AA22;
+  border: 2px green solid;
+}
+button:disabled {
+  color: #D9D9D9;
+}
+
 button {
   font-size: 20px;
 }
@@ -174,6 +183,11 @@ button {
 /* End SIGN UP PAGE */
 
 /*MY-INFO PAGE */
+#my-info-head {
+  margin-top: 20px;
+  padding-left:150px;
+}
+
 /*END MY-INFO PAGE */
 
 /********** Large devices only **********/

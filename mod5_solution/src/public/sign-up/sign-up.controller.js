@@ -24,6 +24,8 @@ function SignUpController(UserPreference) {
     })
     .catch(function (error) {
       ctrl.pref.menuitem = '';
+      ctrl.pref.name = '';
+      ctrl.pref.description = '';
       console.log(error);
     })
   };   
