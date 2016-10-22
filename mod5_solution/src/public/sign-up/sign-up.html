@@ -1,0 +1,69 @@
+
+<fieldset id=signup class=signup-fieldset>
+  <legend class=signup-legend>Newsletter Sign Up (that will never come :-)</legend>      
+    <form name='signupForm' novalidate class=signup-form>
+     <!-- First Name -->
+     <input type="text" name="firstname" placeholder="Enter First Name"
+       ng-model="signUpCtrl.pref.firstname"
+       required>
+       {{ signUpCtrl.pref.firstname }}
+       <span
+         ng-if="signupForm.firstname.$error.required && signupForm.firstname.$touched">
+         Must enter a first name
+       </span>
+       <br>
+       <!-- Last Name -->
+       <input type="text" name="lastname" placeholder="Enter Last Name"
+         ng-model="signUpCtrl.pref.lastname"
+         required>
+         {{ signUpCtrl.pref.lastname }}
+         <span
+            ng-if="(signupForm.lastname.$error.required) &&signupForm.lastname.$touched">
+            Must enter a last name
+         </span>
+         <br>
+         <!-- Email Address -->
+         <input type="email" name="email" placeholder="Email"
+            ng-model="signUpCtrl.pref.email"
+            required>
+          {{ signUpCtrl.pref.email }}
+          <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+              Must be a valid email address: handle@domain format
+          </span>
+          <br>
+          <!-- Phone Number -->
+          <input type="text" name="phone" placeholder="Phone ###-###-####"
+             ng-model="signUpCtrl.pref.phone"
+             pattern="(\d{3})-(\d{3})-(\d{4})"
+             required>
+          {{ signUpCtrl.pref.phone }}
+          <span ng-if="(signupForm.phone.$error.required || signupForm.phone.$invalid) && signupForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+          <!-- favorite Disk -->
+          <input type="text" name="menuitem" placeholder="Enter favorite dish"
+             ng-model="signUpCtrl.pref.menuitem"
+             ng-blur="signUpCtrl.findItem();"
+             required>
+          {{ signUpCtrl.pref.menuitem }}
+          <span ng-if="signupForm.menuitem.$error.required && signupForm.menuitem.$touched">
+             No such menu number exits
+          </span>
+          <br>
+          <!-- Submit -->
+          <button
+            ng-disabled="signupForm.$invalid"
+            ng-click="signUpCtrl.submit()">Submit</button>
+
+          <div style="margin-top: 10px;">
+            Form valid? {{ signupForm.$valid }}
+          </div>      
+    </form>
+  </fieldset>
+
+ <div id="info" ng-if="signUpCtrl.pref.completed">
+     <h2>{{ signUpCtrl.pref.firstname + ' ' + signUpCtrl.pref.lastname }} your information has been saved.</h2>
+ </div>
+
+ 

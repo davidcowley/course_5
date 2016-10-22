@@ -113,6 +113,68 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/* SIGN-UP PAGE */
+.signup-fieldset {
+    width:800px;
+    height:450px;
+    padding:auto;
+    border:hidden;
+    margin:auto;
+    outline:0;
+    border-style: solid;
+}
+
+.signup-legend { 
+    width:415px;
+    height:-1px;
+    padding-left:5px;
+    border:0;
+    margin-top:0px;
+    margin-left: 12px;
+    outline:inherit;
+    color: aliceblue
+    
+}
+
+
+.signup-form {
+    width:inherit;
+    height:inherit;
+    padding-top: 15px;
+    margin-top:50px;
+    padding-left: 50px;
+    border-style:hidden;
+    margin:inherit;
+    outline:inherit
+    
+}
+
+input {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color:black
+}
+button {
+  font-size: 20px;
+}
+
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 2px red solid;
+}
+
+#info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* End SIGN UP PAGE */
+
+/*MY-INFO PAGE */
+/*END MY-INFO PAGE */
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
